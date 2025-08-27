@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Enter API Key</title>
+  <style> 
+    html, body {
+        width: 400px;          /* wider popup */
+        max-width: 420px;      /* optional safety cap */
+        height: auto;          /* height shrinks to fit */
+        min-height: 180px;     /* ensures not too tiny */
+        margin: 0;             /* remove default spacing */
+    }
+
+    body {
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+        padding: 16px;         /* inner spacing */
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        display:block;
+        font-weight:600;
+        margin-bottom:6px;
+    }
+
+    input {
+        width:100%;
+        padding:8px;
+        border:1px solid #e5e7eb;
+        border-radius:8px;
+    }
+
+    button {
+        margin-top:12px;
+        padding:8px 12px;
+        border:0;
+        border-radius:8px;
+        cursor:pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2 style="margin:0 0 12px">OpenAI API Key</h2>
+  <p style="margin:0 0 10px">Paste your key to enable the AI chat.</p>
+  <label for="key">API Key</label>
+  <input id="key" type="password" placeholder="sk-..." autocomplete="off" />
+  <div id="msg" style="margin-top:8px; font-size:12px; color:#ef4444;"></div>
+  <button id="save">Save</button>
+
+  <script src="popup.js"></script>
+</body>
+</html>
