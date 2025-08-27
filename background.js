@@ -2,7 +2,7 @@
 
 // ⚠️ TEMPORARY for learning: put your key here.
 // Later, move to a small server proxy so you don't ship secrets.
-const KEY_STORAGE = await getKey();
+const KEY_STORAGE = 'openai_api_key';
 
 async function getKey() {
   const { [KEY_STORAGE]: key } = await chrome.storage.local.get(KEY_STORAGE);

@@ -309,33 +309,25 @@ function createAIChatContainer(){
         function sleep(ms){ return new Promise(r => setTimeout(r, ms)); }
 
         // Insert the chat container into the same parent as the button
-        try {
-            const helperBtn = document.getElementById('ai-help-button');
-            const codingDescContainer = document.getElementsByClassName(codingDescContainerClass)[0];
-            
-            console.log('Helper button found:', !!helperBtn);
-            console.log('Coding desc container found:', !!codingDescContainer);
-            
-            if (helperBtn && codingDescContainer) {
-                codingDescContainer.appendChild(box);
-                console.log('Chat container appended to coding desc container');
-            } else if (document.body) {
-                // Fallback: append to body if containers not found
-                document.body.appendChild(box);
-                console.log('Chat container appended to body as fallback');
-            }
-            
-            // Verify the container was added
-            const addedContainer = document.getElementById('ai-chat-container');
-            console.log('Container verification after insertion:', !!addedContainer);
-        } catch (error) {
-            console.error('Error in createAIChatContainer:', error);
-            // Fallback: append to body if there's any error
-            if (document.body) {
-                document.body.appendChild(box);
-                console.log('Container appended to body due to error');
-            }
+        const helperBtn = document.getElementById('ai-help-button');
+        const codingDescContainer = document.getElementsByClassName(codingDescContainerClass)[0];
+        
+        console.log('Helper button found:', !!helperBtn);
+        console.log('Coding desc container found:', !!codingDescContainer);
+        
+        if (helperBtn && codingDescContainer) {
+            codingDescContainer.appendChild(box);
+            console.log('Chat container appended to coding desc container');
+        } else if (document.body) {
+            // Fallback: append to body if containers not found
+            document.body.appendChild(box);
+            console.log('Chat container appended to body as fallback');
         }
+        
+        // Verify the container was added
+        const addedContainer = document.getElementById('ai-chat-container');
+        console.log('Container verification after insertion:', !!addedContainer);
+
     } catch (error) {
         console.error('Error in createAIChatContainer:', error);
         // Create a simple fallback container
